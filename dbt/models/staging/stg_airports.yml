@@ -1,0 +1,17 @@
+version: 2
+models:
+  - name: stg_airports
+    description: Cleaned and typed airport reference records.
+    columns:
+      - name: ident
+        tests:
+          - not_null
+          - unique
+      - name: airport_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['heliport', 'small_airport', 'medium_airport', 'large_airport', 'seaplane_base', 'balloonport', 'closed']
+      - name: iso_country
+        tests:
+          - not_null

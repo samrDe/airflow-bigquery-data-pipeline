@@ -1,0 +1,13 @@
+name: 'airport_quality'
+version: '1.0.0'
+config-version: 2
+profile: 'airport_quality'
+model-paths: ['models']
+test-paths: ['tests']
+clean-targets: ['target', 'dbt_packages']
+models:
+  airport_quality:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
